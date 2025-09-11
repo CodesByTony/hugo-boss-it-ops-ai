@@ -100,10 +100,11 @@ st.markdown("""
     }
     
     /* SIDEBAR FIXES - COMPLETE */
-    section[data-testid="stSidebar"] {
-        background: #ffffff !important;
-        border-right: 2px solid #e0e0e0;
-    }
+section[data-testid="stSidebar"] {
+    background: #87CEEB !important; /* Change background to sky blue */
+    border-right: 2px solid #e0e0e0; /* Keep the border as is */
+}
+
     
     /* All sidebar text elements */
     section[data-testid="stSidebar"] .stMarkdown,
