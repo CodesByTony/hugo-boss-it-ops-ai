@@ -23,121 +23,122 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-
-# Custom CSS - mixing Hugo Boss black with modern tech colors
+# Custom CSS - FIXED for better readability
 st.markdown("""
 <style>
-    /* Main color scheme - black, white, with tech blue and green accents */
+    /* Clean, readable color scheme */
     .stApp {
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        background: #f8f9fa;
     }
     
     .main-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
         color: white;
         padding: 2.5rem;
         border-radius: 20px;
         margin-bottom: 2rem;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         text-align: center;
-        animation: slideDown 0.5s ease-out;
-    }
-    
-    @keyframes slideDown {
-        from { transform: translateY(-20px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
     }
     
     .metric-card {
-        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        background: white;
         padding: 1.5rem;
         border-radius: 15px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        border-left: 4px solid #667eea;
-        transition: transform 0.3s ease;
+        border-left: 4px solid #2a5298;
     }
     
-    .metric-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-    
-    .alert-critical {
-        background: linear-gradient(135deg, #f85032 0%, #e73827 100%);
-        color: white;
-        padding: 1rem;
-        border-radius: 10px;
-        margin: 0.5rem 0;
-        animation: pulse 2s infinite;
-    }
-    
-    @keyframes pulse {
-        0% { box-shadow: 0 0 0 0 rgba(248, 80, 50, 0.7); }
-        70% { box-shadow: 0 0 0 10px rgba(248, 80, 50, 0); }
-        100% { box-shadow: 0 0 0 0 rgba(248, 80, 50, 0); }
-    }
-    
-    .alert-warning {
-        background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
-        color: #333;
-        padding: 1rem;
-        border-radius: 10px;
-        margin: 0.5rem 0;
-    }
-    
-    .success-message {
-        background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
-        color: white;
-        padding: 1rem;
-        border-radius: 10px;
-    }
-    
-    /* Stylish sidebar */
-    .css-1d391kg {
-        background: linear-gradient(180deg, #2c3e50 0%, #3498db 100%);
-    }
-    
-    /* Metric styling */
+    /* Remove problematic styles */
     [data-testid="metric-container"] {
-        background: rgba(255, 255, 255, 0.9);
-        border: 1px solid rgba(102, 126, 234, 0.2);
+        background: white;
+        border: 1px solid #e0e0e0;
         padding: 15px;
         border-radius: 10px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
     
-    /* Button styling */
+    [data-testid="metric-container"] > div {
+        color: #333333 !important;
+    }
+    
+    /* Ensure all text is readable */
+    .stMarkdown {
+        color: #333333;
+    }
+    
+    /* Button styling - keeping it simple */
     .stButton > button {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: #2a5298;
         color: white;
         border: none;
         padding: 0.5rem 2rem;
-        border-radius: 30px;
+        border-radius: 5px;
         font-weight: bold;
-        transition: all 0.3s ease;
     }
     
     .stButton > button:hover {
-        transform: scale(1.05);
-        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        background: #1e3c72;
+        color: white;
     }
     
-    /* Tab styling */
+    /* Tab styling - readable */
     .stTabs [data-baseweb="tab-list"] {
-        background: rgba(255, 255, 255, 0.8);
+        background: white;
         border-radius: 10px;
         padding: 5px;
     }
     
     .stTabs [data-baseweb="tab"] {
-        border-radius: 8px;
-        color: #333;
+        color: #333333;
         font-weight: 600;
     }
     
     .stTabs [aria-selected="true"] {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: #2a5298;
         color: white;
+    }
+    
+    /* Sidebar - keep it simple */
+    section[data-testid="stSidebar"] {
+        background: #ffffff;
+        border-right: 2px solid #e0e0e0;
+    }
+    
+    section[data-testid="stSidebar"] .stMarkdown {
+        color: #333333;
+    }
+    
+    /* Fix radio button text */
+    .stRadio > label {
+        color: #333333 !important;
+    }
+    
+    /* Ensure metric labels are visible */
+    [data-testid="stMetricLabel"] {
+        color: #666666 !important;
+    }
+    
+    [data-testid="stMetricValue"] {
+        color: #000000 !important;
+    }
+    
+    /* Fix expander text */
+    .streamlit-expanderHeader {
+        color: #333333 !important;
+        background: #f8f9fa;
+    }
+    
+    /* Info/Warning/Error boxes - keep readable */
+    .stAlert {
+        background: white;
+        border-left: 4px solid;
+        color: #333333;
+    }
+    
+    /* Success messages */
+    div[data-baseweb="notification"] {
+        color: #333333 !important;
     }
 </style>
 """, unsafe_allow_html=True)
