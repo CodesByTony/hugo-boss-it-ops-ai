@@ -23,7 +23,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-# Custom CSS - FIXED for better readability
+# Custom CSS - FULLY FIXED for readability
 st.markdown("""
 <style>
     /* Clean, readable color scheme */
@@ -49,7 +49,7 @@ st.markdown("""
         border-left: 4px solid #2a5298;
     }
     
-    /* Remove problematic styles */
+    /* Main content area text */
     [data-testid="metric-container"] {
         background: white;
         border: 1px solid #e0e0e0;
@@ -67,7 +67,7 @@ st.markdown("""
         color: #333333;
     }
     
-    /* Button styling - keeping it simple */
+    /* Button styling */
     .stButton > button {
         background: #2a5298;
         color: white;
@@ -82,7 +82,7 @@ st.markdown("""
         color: white;
     }
     
-    /* Tab styling - readable */
+    /* Tab styling */
     .stTabs [data-baseweb="tab-list"] {
         background: white;
         border-radius: 10px;
@@ -99,18 +99,41 @@ st.markdown("""
         color: white;
     }
     
-    /* Sidebar - keep it simple */
+    /* SIDEBAR FIXES - COMPLETE */
     section[data-testid="stSidebar"] {
-        background: #ffffff;
+        background: #ffffff !important;
         border-right: 2px solid #e0e0e0;
     }
     
-    section[data-testid="stSidebar"] .stMarkdown {
-        color: #333333;
+    /* All sidebar text elements */
+    section[data-testid="stSidebar"] .stMarkdown,
+    section[data-testid="stSidebar"] .stMarkdown p,
+    section[data-testid="stSidebar"] h1,
+    section[data-testid="stSidebar"] h2,
+    section[data-testid="stSidebar"] h3,
+    section[data-testid="stSidebar"] h4,
+    section[data-testid="stSidebar"] h5,
+    section[data-testid="stSidebar"] h6,
+    section[data-testid="stSidebar"] label {
+        color: #333333 !important;
     }
     
-    /* Fix radio button text */
-    .stRadio > label {
+    /* Sidebar radio buttons */
+    section[data-testid="stSidebar"] .stRadio > label,
+    section[data-testid="stSidebar"] [data-baseweb="radio"] > label {
+        color: #333333 !important;
+    }
+    
+    /* Sidebar metrics */
+    section[data-testid="stSidebar"] [data-testid="stMetricLabel"] {
+        color: #666666 !important;
+    }
+    
+    section[data-testid="stSidebar"] [data-testid="stMetricValue"] {
+        color: #000000 !important;
+    }
+    
+    section[data-testid="stSidebar"] [data-testid="stMetricDelta"] {
         color: #333333 !important;
     }
     
@@ -129,7 +152,7 @@ st.markdown("""
         background: #f8f9fa;
     }
     
-    /* Info/Warning/Error boxes - keep readable */
+    /* Info/Warning/Error boxes */
     .stAlert {
         background: white;
         border-left: 4px solid;
@@ -421,11 +444,11 @@ show_ai_insights()
 
 # Sidebar with gradient styling
 with st.sidebar:
-    # Logo area
+    # Logo area with better contrast
     st.markdown("""
-    <div style='text-align: center; padding: 1rem; background: white; border-radius: 15px; margin-bottom: 1rem;'>
-        <h2 style='color: #667eea; margin: 0;'>HUGO BOSS</h2>
-        <p style='color: #764ba2; margin: 0; font-size: 0.9rem;'>IT Intelligence</p>
+    <div style='text-align: center; padding: 1rem; background: #f0f0f0; border: 1px solid #ddd; border-radius: 10px; margin-bottom: 1rem;'>
+        <h2 style='color: #000000; margin: 0;'>HUGO BOSS</h2>
+        <p style='color: #333333; margin: 0; font-size: 0.9rem;'>IT Intelligence</p>
     </div>
     """, unsafe_allow_html=True)
     
